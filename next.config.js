@@ -18,9 +18,6 @@ const config = {
   // Performance optimizations
   poweredByHeader: false, // Remove the X-Powered-By header
   compress: true, // Enable gzip compression
-
-  // Output mode
-  output: "standalone",
 };
 
 export default config;
