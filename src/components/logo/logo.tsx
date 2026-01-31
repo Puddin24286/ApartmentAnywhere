@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 interface LogoProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -32,13 +31,10 @@ const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`${getWrapperClasses()} ${className ?? ""}`} {...props}>
       <div className="relative flex-shrink-0">
-        <Image
+        <img
           src="/logo.png"
           alt="ApartmentAnywhere - Stay a While. Anywhere."
-          width={200}
-          height={60}
           className={sizeClasses[size]}
-          priority
         />
       </div>
 
