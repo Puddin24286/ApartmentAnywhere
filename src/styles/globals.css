@@ -1,0 +1,681 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Responsive text sizing - Mobile first */
+    html {
+        font-size: 14px; /* Base size for mobile */
+    }
+
+    @media (min-width: 640px) {
+        html {
+            font-size: 15px; /* Small tablets */
+        }
+    }
+
+    @media (min-width: 768px) {
+        html {
+            font-size: 16px; /* Tablets and above */
+        }
+    }
+
+    @media (min-width: 1024px) {
+        html {
+            font-size: 16px; /* Desktop */
+        }
+    }
+
+    @media (min-width: 1920px) {
+        html {
+            font-size: 18px; /* Large screens */
+        }
+    }
+
+    .marker-label {
+        padding: 4px 8px !important;
+        border-radius: 16px !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    :root {
+        /* ============================================================
+           Light Theme - Tron-inspired with Cyan Accents (Adapted for Apartments)
+           ============================================================ */
+
+        /* Light background with cool blue tint */
+        --background: 200 30% 96%; /* Light cyan-tinged background */
+        --foreground: 220 40% 12%; /* Deep navy text for high contrast */
+
+        /* ApartmentAnywhere Brand Colors */
+        --us-land-red: 358 100% 29%;
+        --us-land-blue: 215 100% 33%;
+        --us-land-white: 220 14% 97%;
+
+        /* Search Bar Glow - Tron/Cyan Theme default */
+        --search-glow-from: 186 100% 50%;       /* Cyan */
+        --search-glow-via: 190 100% 45%;       /* Light Cyan */
+        --search-glow-to: 200 100% 40%;        /* Blue-Cyan */
+        --search-glow-shadow: 186 100% 50% / 0.3; /* Cyan glow shadow */
+
+        --card: 0 0% 100%; /* Light Card/Surface */
+        --card-foreground: 220 40% 12%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 40% 12%;
+
+        /* Primary accent - Cyan blue */
+        --primary: 190 95% 50%; /* Cyan-blue primary */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 210 40% 96%; /* Soft blue-gray */
+        --secondary-foreground: 220 40% 12%;
+
+        --muted: 200 30% 94%; /* Light cyan-gray */
+        --muted-foreground: 215 20% 40%;
+
+        --accent: 190 95% 50%; /* Cyan accent */
+        --accent-foreground: 220 40% 12%;
+
+        --destructive: 0 84% 60%; /* Bright red for errors */
+        --destructive-foreground: 0 0% 100%;
+
+         /* Light cyan-tinged border */
+        --input: 190 30% 88%;
+        --ring: 190 95% 50%; /* Cyan focus ring */
+
+        --radius: 0.5rem;
+
+        /* Enhanced Form Field Variables - Light Mode */
+        --form-bg: 0 0% 100%;
+        --form-bg-hover: 200 30% 96%;
+        --form-bg-focus: 200 30% 98%;
+        --form-bg-disabled: 210 40% 96.1%;
+
+        --form-border: 190 30% 88%;
+        --form-border-hover: 190 35% 82%;
+        --form-border-focus: 190 95% 50%;
+        --form-border-error: 0 84.2% 60.2%;
+
+        --form-text: 220 40% 12%;
+        --form-text-disabled: 215.4 16.3% 46.9%;
+        --form-placeholder: 215.4 16.3% 56.9%;
+
+        --form-label: 220 40% 12%;
+        --form-label-disabled: 215.4 16.3% 46.9%;
+
+        --form-error: 0 84.2% 60.2%;
+        --form-error-bg: 0 84.2% 97%;
+
+        --form-focus-ring: 190 95% 50%;
+        --form-focus-shadow: 190 95% 50% / 0.15;
+
+        /* Vintage Rolodex Theme Colors */
+        --vintage-brown: 30 25% 25%;
+        --card-cream: 40 40% 96%;
+        --card-border: 30 20% 80%;
+
+        /* Button gradient - Tron Cyan theme */
+        --button-gradient-from: 186 100% 55%;
+        --button-gradient-to: 200 100% 45%;
+
+        /* Icon colors - Cyan/Blue */
+        --icon-color-primary: 186 100% 50%;
+        --icon-color-secondary: 200 100% 40%;
+
+        /* Navigation icon colors - Header */
+        --icon-header-base: 186 100% 50%;
+        --icon-header-hover: 190 100% 40%;
+        --icon-header-active: 200 100% 35%;
+    }
+
+    .dark {
+        /* ============================================================
+           TRON THEME - Dark Futuristic Neon Style
+           ============================================================ */
+
+        /* Tron-inspired dark background with deep blue-black tones */
+        --background: 220 30% 8%; /* Deep dark blue-black */
+        --foreground: 186 100% 85%; /* Bright cyan-white text for high contrast */
+
+        /* Card surfaces with slight blue tint */
+        --card: 220 25% 12%; /* Dark card with blue tint */
+        --card-foreground: 186 100% 90%;
+
+        --popover: 220 25% 12%;
+        --popover-foreground: 186 100% 90%;
+
+        /* Primary accent - Neon Cyan */
+        --primary: 186 100% 55%; /* Bright cyan neon */
+        --primary-foreground: 220 30% 8%;
+
+        /* Secondary - Electric Blue */
+        --secondary: 210 100% 25%; /* Darker blue for secondary elements */
+        --secondary-foreground: 186 100% 90%;
+
+        /* Muted elements */
+        --muted: 220 20% 18%;
+        --muted-foreground: 186 70% 60%; /* Muted cyan text */
+
+        /* Accent - Neon Cyan glow */
+        --accent: 186 100% 55%; /* Cyan accent */
+        --accent-foreground: 220 30% 8%;
+
+        /* Destructive - Keep red */
+        --destructive: 0 84% 65%;
+        --destructive-foreground: 186 100% 95%;
+
+        /* Borders - Subtle cyan tint */
+        --border: 186 50% 20%; /* Very subtle cyan border */
+        --input: 186 50% 18%;
+
+        /* Focus ring - Bright cyan glow */
+        --ring: 186 100% 60%;
+
+        /* Enhanced Form Field Variables - Tron Dark Mode */
+        --form-bg: 220 25% 14%;
+        --form-bg-hover: 220 25% 16%;
+        --form-bg-focus: 220 25% 18%;
+        --form-bg-disabled: 220 25% 12%;
+
+        --form-border: 186 50% 20%;
+        --form-border-hover: 186 60% 25%;
+        --form-border-focus: 186 100% 55%;
+        --form-border-error: 0 84% 65%;
+
+        --form-text: 186 100% 90%;
+        --form-text-disabled: 186 50% 45%;
+        --form-placeholder: 186 60% 50%;
+
+        --form-label: 186 100% 85%;
+        --form-label-disabled: 186 50% 45%;
+
+        --form-error: 0 84% 70%;
+        --form-error-bg: 0 84% 12%;
+
+        --form-focus-ring: 186 100% 55%;
+        --form-focus-shadow: 186 100% 55% / 0.2;
+
+        /* Button gradient - Cyan/Blue Tron theme */
+        --button-gradient-from: 186 100% 60%;
+        --button-gradient-to: 210 100% 50%;
+
+        /* Icon colors - Neon Cyan/Blue */
+        --icon-color-primary: 186 100% 60%;
+        --icon-color-secondary: 210 100% 50%;
+
+        /* Navigation icon colors - Header - Tron Dark mode */
+        --icon-header-base: 186 100% 55%;
+        --icon-header-hover: 186 100% 65%;
+        --icon-header-active: 186 100% 75%;
+
+        /* Search Bar Glow - Tron Cyan Theme */
+        --search-glow-from: 186 100% 60%;       /* Bright cyan */
+        --search-glow-via: 190 100% 55%;       /* Medium cyan */
+        --search-glow-to: 200 100% 50%;        /* Blue-cyan */
+        --search-glow-shadow: 186 100% 60% / 0.4; /* Cyan glow shadow */
+    }
+
+    /* ============================================================
+       OKLCH Color Themes - ApartmentAnywhere Theme System
+       ============================================================ */
+
+    /* Smooth theme transitions */
+    * {
+        transition: background-color 200ms ease,
+                    border-color 200ms ease,
+                    color 200ms ease;
+    }
+
+    /* ============================================================
+       1. Slate Gray - Default (Neutral Professional)
+       ============================================================ */
+    .theme-slate-gray {
+        --background: hsl(210, 20%, 98%); /* Light Background */
+        --foreground: hsl(217,33%, 17%); /* Keep original foreground for contrast */
+        --card: hsl(0, 0%, 100%); /* Light Card/Surface */
+        --card-foreground: hsl(217, 33%, 17%);
+        --popover: hsl(0, 0%, 100%);
+        --popover-foreground: hsl(0, 0%, 35%);
+        --primary: hsl(210, 45%, 45%); /* Light Accent */
+        --primary-foreground: hsl(0, 0%, 100%);
+        --secondary: hsl(210, 10%, 90%);
+        --secondary-foreground: hsl(217,33%, 17%);
+        --muted: hsl(210, 10%, 90%);
+        --muted-foreground: hsl(210, 15%, 40%);
+        --accent: hsl(210, 25%, 90%); /* Light Accent */
+        --accent-foreground: hsl(217, 33%, 17%);
+        --destructive: hsl(0, 80%, 50%); /* Keep existing destructive */
+        --border: hsl(210, 15%, 85%);
+        --input: hsl(210, 15%, 85%);
+        --ring: hsl(217, 33%, 17%);
+
+        /* Search Bar Glow - Slate Gray Theme */
+        --search-glow-from: 210 50% 45%;       /* Slate gray-blue */
+        --search-glow-via: 215 45% 40%;       /* Darker slate */
+        --search-glow-to: 220 40% 35%;        /* Darkest slate */
+        --search-glow-shadow: 210 50% 45% / 0.3; /* Slate glow shadow */
+
+        /* Button gradient - Gray theme */
+        --button-gradient-from: 250 2% 40%;
+        --button-gradient-to: 250 2% 25%;
+
+        /* Icon colors - Solid gray */
+        --icon-color-primary: 250 5% 40%;
+        --icon-color-secondary: 250 3% 55%;
+
+        /* Navigation icon colors - Header */
+        --icon-header-base: 250 5% 40%;
+        --icon-header-hover: 250 8% 30%;
+        --icon-header-active: 250 10% 25%;
+    }
+
+    .dark.theme-slate-gray {
+        --background: hsl(210, 5%, 23%); /* Dark Background */
+        --foreground: hsl(210, 40%, 98%); /* Main Text */
+        --card: hsl(217, 33%, 17%); /* Dark Card/Surface */
+        --card-foreground: hsl(210, 40%, 98%);
+        --popover: hsl(217, 33%, 17%);
+        --popover-foreground: hsl(210, 40%, 98%);
+        --primary: hsl(199, 89%, 60%); /* Dark Accent */
+        --primary-foreground: hsl(222, 47%, 11%);
+        --secondary: hsl(217, 33%, 17%); /* Using Card/Surface for secondary */
+        --secondary-foreground: hsl(210, 40%, 98%);
+        --muted: hsl(217, 33%, 17%);
+        --muted-foreground: hsl(217, 19%, 65%); /* Muted Text */
+        --accent: hsl(199, 89%, 60%); /* Dark Accent */
+        --accent-foreground: hsl(210, 40%, 98%);
+        --destructive: hsl(0, 80%, 60%); /* Keep existing destructive */
+        --border: hsl(217, 33%, 25%); /* Border/Stroke */
+        --input: hsl(217, 33%, 25%);
+        --ring: hsl(217, 10%, 75%);
+
+        /* Search Bar Glow - Slate Gray Theme (Dark Mode) */
+        --search-glow-from: 210 60% 55%;       /* Lighter slate for dark mode */
+        --search-glow-via: 215 55% 50%;       /* Medium slate */
+        --search-glow-to: 220 50% 45%;        /* Darker slate */
+        --search-glow-shadow: 210 60% 55% / 0.4; /* Brighter slate glow shadow */
+
+        /* Button gradient - Gray theme (dark mode) */
+        --button-gradient-from: 250 2% 55%;
+        --button-gradient-to: 250 2% 40%;
+        /* Icon colors - Solid light gray */
+        --icon-color-primary: 250 5% 70%;
+        --icon-color-secondary: 250 3% 55%;
+
+        /* Navigation icon colors - Header - Dark mode */
+        --icon-header-base: 250 5% 70%;
+        --icon-header-hover: 250 5% 85%;
+        --icon-header-active: 250 10% 95%;
+    }
+
+    /* ============================================================
+       2. Investment Blue (Professional, Trustworthy)
+       ============================================================ */
+    .theme-investment-blue {
+        --background: hsl(0, 0%, 100%);
+        --foreground: hsl(222.2, 84%, 4.9%);     /* Near-black Text */
+        --card: hsl(0, 0%, 100%);
+        --card-foreground: hsl(222.2, 84%, 4.9%);
+        --popover: hsl(0, 0%, 100%);
+       --popover-foreground: hsl(222.2, 84%, 4.9%);
+       --primary: hsl(222.2, 47.4%, 11.2%);     /* Deep Blue Primary */
+       --primary-foreground: hsl(210, 40%, 98%);/* White Text on Primary */
+       --secondary: hsl(210, 40%, 96.1%);
+       --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+       --muted: hsl(210, 40%, 96.1%);
+       --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+       --accent: hsl(210, 40%, 96.1%);
+       --accent-foreground: hsl(222.2, 47.4%, 11.2%);
+       --destructive: hsl(0, 80%, 60%);
+       --border: hsl(214.3, 31.8%, 91.4%);
+       --input: hsl(214.3, 31.8%, 91.4%);
+       --ring: hsl(222.2, 47.4%, 11.2%);
+
+        /* Search Bar Glow - Investment Blue Theme */
+        --search-glow-from: 220 80% 50%;       /* Investment blue */
+        --search-glow-via: 225 75% 45%;       /* Medium blue */
+        --search-glow-to: 230 70% 40%;        /* Darker blue */
+        --search-glow-shadow: 220 80% 50% / 0.3; /* Blue glow shadow */
+
+        /* Button gradient - Blue theme */
+        --button-gradient-from: 240 80% 50%;
+        --button-gradient-to: 240 80% 35%;
+        /* Icon colors - Solid blue */
+        --icon-color-primary: 240 70% 45%;
+        --icon-color-secondary: 240 60% 60%;
+
+        /* Navigation icon colors - Header */
+        --icon-header-base: 240 70% 50%;
+        --icon-header-hover: 240 75% 40%;
+        --icon-header-active: 240 80% 35%;
+    }
+
+    .dark.theme-investment-blue {
+        --background: hsl(220, 20%, 8%); /* Dark Background */
+        --foreground: hsl(0, 0%, 100%); /* Headline Text */
+        --card: hsl(220, 20%, 15%); /* Dark Card/Surface */
+        --card-foreground: hsl(0, 0%, 100%);
+        --popover: hsl(220, 20%, 15%);
+        --popover-foreground: hsl(0, 0%, 100%);
+        --primary: hsl(220, 65%, 55%); /* Dark Accent (Success) */
+        --primary-foreground: hsl(220, 20%, 8%);
+        --secondary: hsl(220, 30%, 20%); /* Action CTA */
+        --secondary-foreground: hsl(0, 0%, 100%);
+        --muted: hsl(220, 20%, 15%);
+        --muted-foreground: hsl(220, 10%, 65%); /* Body Text */
+        --accent: hsl(220, 65%, 55%); /* Dark Accent (Success) */
+        --accent-foreground: hsl(220, 20%, 8%);
+        --destructive: hsl(0. 80%, 60.2%); /* Keep existing destructive */
+        --border: hsl(220, 20%, 25%); /* Stroke/Border */
+        --input: hsl(220, 20%, 25%);
+        --ring: hsl(220, 75%, 65%);
+
+        /* Search Bar Glow - Investment Blue Theme (Dark Mode) */
+        --search-glow-from: 220 85% 65%;       /* Brighter blue for dark mode */
+        --search-glow-via: 225 80% 60%;       /* Medium bright blue */
+        --search-glow-to: 230 75% 55%;        /* Darker bright blue */
+        --search-glow-shadow: 220 85% 65% / 0.4; /* Bright blue glow shadow */
+
+        /* Button gradient - Blue theme (dark mode) */
+        --button-gradient-from: 240 85% 65%;
+        --button-gradient-to: 240 85% 50%;
+        /* Icon colors - Solid bright blue */
+        --icon-color-primary: 240 75% 65%;
+        --icon-color-secondary: 240 65% 75%;
+
+        /* Navigation icon colors - Header - Dark mode */
+        --icon-header-base: 240 75% 65%;
+        --icon-header-hover: 240 80% 75%;
+        --icon-header-active: 240 85% 85%;
+    }
+
+    /* ============================================================
+       3. Property Green (Growth, Investment, Wealth)
+       ============================================================ */
+    .theme-property-green {
+        --background: hsl(160, 30%, 97%); /* Light Background */
+        --foreground: hsl(155, 5%, 35%); /* Keep original foreground for contrast */
+        --card: hsl(165, 20%, 100%); /* Light Card/Surface */
+        --card-foreground: hsl(155, 5%, 35%);
+        --popover: hsl(165, 20%, 100%);
+        --popover-foreground: hsl(155, 5%, 35%);
+        --primary: hsl(38, 92%, 50%); /* Light Accent (Gold) */
+        --primary-foreground: hsl(0, 0%, 98.5%);
+        --secondary: hsl(155, 1%, 97%); /* Keep original secondary for contrast */
+        --secondary-foreground: hsl(155, 6%, 21%);
+        --muted: hsl(155, 1%, 97%);
+        --muted-foreground: hsl(155, 16%, 55%);
+        --accent: hsl(38, 92%, 50%); /* Light Accent (Gold) */
+        --accent-foreground: hsl(155, 15%, 35%);
+        --destructive: hsl(0.577 0.245 27.325); /* Keep existing destructive */
+        --border: hsl(155, 3%, 98%);
+        --input: hsl(0, 0%, 100%);
+        --ring: hsl(38, 92%, 50%);
+
+        /* Search Bar Glow - Property Green Theme */
+        --search-glow-from: 155 70% 45%;       /* Green */
+        --search-glow-via: 150 65% 40%;       /* Medium green */
+        --search-glow-to: 145 60% 35%;        /* Darker green */
+        --search-glow-shadow: 155 70% 45% / 0.3; /* Green glow shadow */
+
+        /* Button gradient - Green theme */
+        --button-gradient-from: 155 70% 45%;
+        --button-gradient-to: 155 70% 30%;
+        /* Icon colors - Solid green */
+        --icon-color-primary: 155 65% 40%;
+        --icon-color-secondary: 155 55% 55%;
+
+        /* Navigation icon colors - Header */
+        --icon-header-base: 155 65% 45%;
+        --icon-header-hover: 155 70% 35%;
+        --icon-header-active: 155 75% 30%;
+    }
+
+    .dark.theme-property-green {
+        --background: hsl(162, 63%, 6%); /* Dark Background */
+        --foreground: hsl(135, 75%, 97%); /* Headline Text */
+        --card: hsl(165, 61%, 12%); /* Dark Card/Surface */
+        --card-foreground: hsl(135, 75%, 97%);
+        --popover: hsl(165, 61%, 12%);
+        --popover-foreground: hsl(135, 75%, 97%);
+        --primary: hsl(43, 96%, 58%); /* Dark Accent (Gold) */
+        --primary-foreground: hsl(162, 63%, 6%);
+        --secondary: hsl(145, 76%, 36%); /* Border/Accents */
+        --secondary-foreground: hsl(135, 75%, 97%);
+        --muted: hsl(165, 61%, 12%);
+        --muted-foreground: hsl(140, 76%, 73%); /* Body Text */
+        --accent: hsl(43, 96%, 58%); /* Dark Accent (Gold) */
+        --accent-foreground: hsl(135, 75%, 97%);
+        --destructive: oklch(0.704 0.191 22.216); /* Keep existing destructive */
+        --border: hsl(145, 76%, 36%); /* Border/Accents */
+        --input: hsl(165, 61%, 12%);
+        --ring: hsl(43, 96%, 58%);
+
+        /* Search Bar Glow - Property Green Theme (Dark Mode) */
+        --search-glow-from: 155 75% 60%;       /* Brighter green for dark mode */
+        --search-glow-via: 150 70% 55%;       /* Medium bright green */
+        --search-glow-to: 145 65% 50%;        /* Darker bright green */
+        --search-glow-shadow: 155 75% 60% / 0.4; /* Bright green glow shadow */
+
+        /* Button gradient - Green theme (dark mode) */
+        --button-gradient-from: 155 75% 60%;
+        --button-gradient-to: 155 75% 45%;
+        /* Icon colors - Solid bright green */
+        --icon-color-primary: 155 70% 60%;
+        --icon-color-secondary: 155 60% 70%;
+
+        /* Navigation icon colors - Header - Dark mode */
+        --icon-header-base: 155 70% 60%;
+        --icon-header-hover: 155 75% 70%;
+        --icon-header-active: 155 80% 80%;
+    }
+}
+
+@layer base {
+    html {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        font-size: 14px; /* Base mobile font size */
+        line-height: 1.5;
+        overflow-x: hidden; /* Prevent horizontal scrollbar causing gaps */
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        font-optical-sizing: auto;
+        overflow-x: hidden; /* Prevent horizontal scrollbar */
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative; /* Establish positioning context for fixed elements */
+    }
+
+    /* Responsive Typography Scale */
+    h1, .text-4xl, .text-5xl, .text-6xl {
+        font-size: clamp(1.75rem, 4vw, 3.5rem);
+        line-height: 1.1;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+    }
+
+    h2, .text-3xl {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        line-height: 1.2;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+
+    h3, .text-2xl {
+        font-size: clamp(1.25rem, 2.5vw, 2rem);
+        line-height: 1.3;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+    }
+
+    h4, .text-xl {
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        line-height: 1.4;
+        font-weight: 600;
+    }
+
+    h5, .text-lg {
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    h6, .text-base {
+        font-size: clamp(0.875rem, 1.2vw, 1rem);
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    p, .text-sm {
+        font-size: clamp(0.8rem, 1vw, 0.875rem);
+        line-height: 1.6;
+        font-weight: 400;
+    }
+
+    .text-xs {
+        font-size: clamp(0.7rem, 0.8vw, 0.75rem);
+        line-height: 1.4;
+        font-weight: 400;
+    }
+
+    /* Responsive spacing */
+    @media (min-width: 640px) {
+        html {
+            font-size: 15px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        html {
+            font-size: 16px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        html {
+            font-size: 16px;
+        }
+    }
+
+    /* Improve text rendering */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+}
+
+/* Custom scrollbar styling */
+@layer utilities {
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-muted rounded-full hover:bg-accent transition-colors;
+    }
+
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--muted)) transparent;
+    }
+
+    /* Theme-aware gradient button utilities */
+    .btn-gradient {
+        background: linear-gradient(to right,
+            hsl(var(--button-gradient-from)),
+            hsl(var(--button-gradient-to))
+        );
+    }
+
+    .btn-gradient-hover:hover {
+        background: linear-gradient(to right,
+            hsl(var(--button-gradient-from) / 0.9),
+            hsl(var(--button-gradient-to) / 0.8)
+        );
+    }
+
+    /* Theme-aware icon colors */
+    .icon-themed {
+        color: hsl(var(--icon-color-primary)) !important;
+    }
+
+    .icon-themed-secondary {
+        color: hsl(var(--icon-color-secondary)) !important;
+    }
+}
+
+/* Animations */
+@layer utilities {
+    /* Fade in animation for smooth element appearance */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.3s ease-out forwards;
+    }
+
+    /* Slide in from bottom */
+    @keyframes slide-in-bottom {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .animate-slide-in-bottom {
+        animation: slide-in-bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Subtle pulse for badges */
+    @keyframes pulse-subtle {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+    }
+
+    .animate-pulse-subtle {
+        animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

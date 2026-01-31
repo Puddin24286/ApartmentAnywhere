@@ -11,6 +11,12 @@ package-lock.json
 dist/
 build/
 *.log
+.next/
+out/
+
+# Next.js
+.vercel
+*.tsbuildinfo
 
 # IDE
 .vscode/
