@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApartmentAnywhere - Long Term Rentals Made Simple</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .hero {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        .listings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .listing-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .listing-card:hover {
+            transform: translateY(-5px);
+        }
+        .listing-content {
+            padding: 1.5rem;
+        }
+        .listing-title {
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem 0;
+            color: #2c3e50;
+        }
+        .listing-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 0 0 1rem 0;
+        }
+        .listing-details {
+            display: flex;
+            justify-content: space-between;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .amenity {
+            background-color: #ecf0f1;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            margin-top: auto;
+        }
+
+        /* Coming Soon Styles */
+        .coming-soon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .coming-soon h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .coming-soon p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .coming-soon .btn {
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .coming-soon .btn:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+                <img src="logo.png" alt="ApartmentAnywhere Logo" style="height: 50px; margin-right: 15px;">
+                <div>
+                    <h1 style="margin: 0;">ApartmentAnywhere</h1>
+                    <p style="margin: 0; font-size: 0.9rem;">Long-term rentals without the hassle</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#" class="btn" style="text-decoration: none;">Sign In</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+        <div class="logo-container">
+            <img src="logo.png" alt="ApartmentAnywhere Logo">
+        </div>
+        <h1>ApartmentAnywhere</h1>
+        <p>Long-term rentals without the hassle. Simplifying apartment hunting for busy professionals.</p>
+        <p>Coming Soon - Stay Tuned!</p>
+        <button class="btn" onclick="showMainSite()">View Preview</button>
+    </section>
+
+    <!-- Main Site Content (Hidden Initially) -->
+    <div id="main-site" class="hidden">
+        <div class="hero">
+            <div class="container">
+                <h1>Find Your Perfect Long-Term Home</h1>
+                <p>No complicated bookings, no daily rates - just simple monthly rentals</p>
+                <a href="#" class="btn">Browse Apartments</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Featured Listings</h2>
+            <div class="listings-grid" id="listings-container">
+                <!-- Listings will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ApartmentAnywhere. Simplifying long-term rentals.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Show main site content
+        function showMainSite() {
+            document.querySelector('.coming-soon').style.display = 'none';
+            document.getElementById('main-site').classList.remove('hidden');
+        }
+
+        // Fetch listings from API and populate the page
+        async function fetchListings() {
+            try {
+                const response = await fetch('/api/listings');
+                const listings = await response.json();
+
+                const container = document.getElementById('listings-container');
+                container.innerHTML = '';
+
+                listings.forEach(listing => {
+                    const listingElement = document.createElement('div');
+                    listingElement.className = 'listing-card';
+                    listingElement.innerHTML = `
+                        <div class="listing-content">
+                            <h3 class="listing-title">${listing.title}</h3>
+                            <p class="listing-price">$${listing.price}/month</p>
+                            <p>${listing.description}</p>
+                            <div class="listing-details">
+                                <span>${listing.bedrooms} bedroom${listing.bedrooms > 1 ? 's' : ''}</span>
+                                <span>${listing.bathrooms} bathroom${listing.bathrooms > 1 ? 's' : ''}</span>
+                                <span>${listing.location}</span>
+                            </div>
+                            <div class="amenities">
+                                ${listing.amenities.map(amenity => `<span class="amenity">${amenity}</span>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(listingElement);
+                });
+            } catch (error) {
+                console.error('Error fetching listings:', error);
+            }
+        }
+
+        // Load listings when page loads
+        document.addEventListener('DOMContentLoaded', fetchListings);
+    </script>
+</body>
+</html>
